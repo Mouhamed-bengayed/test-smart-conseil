@@ -1,0 +1,23 @@
+<div class="container-fluid d-flex flex-wrap" style="margin-top: 50px;">
+    <div *ngFor="let child of Data" class="row">
+      <div class="col">
+        <app-single-enfant [enfant]="child" class="item"></app-single-enfant>
+      </div>
+    </div>
+  </div>
+  
+  <h1 class="blue-title mt-5">LES RESEAUX SOCIAUX DE JERRY</h1>
+  
+  <div class="container-fluid">
+    <div *ngFor="let reseau of reseauxSociaux" class="row">
+      <div class="col" style="padding-bottom: 10px">
+        <img [src]="reseau.icon" alt="{{ reseau.name }}" class="img-fluid" >
+        <span style="font-weight: 600;">{{ reseau.name }} </span>
+        <img [src]="reseau.iconn" alt="{{ reseau.name }}" class="img-fluid" style="border-radius: 50%; height: 25px; margin-left: 10px; float: right;">
+        <span  style="border-radius: 50%; height: 25px; margin-left: 20px; float: right; margin-right: 15px;">{{ reseau.adr }} </span>
+
+
+    </div>
+    </div>
+  </div>
+  

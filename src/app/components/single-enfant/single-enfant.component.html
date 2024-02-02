@@ -1,0 +1,54 @@
+<div class="card user-card" (click)="onClick(enfant)">
+    <img [src]="enfant?.imageUrl" class="user-image"  >
+    <div class="card-body text-center">
+      <p class="card-text">{{ enfant.first_name }} </p>
+    </div>
+  </div>
+
+  <div *ngIf="enfantSelectionne">
+    <div class="profile-container">
+        <div class="profile-pic">
+        </div>
+        <div class="buttons">
+          <div class="profile-title">
+            <h2> photo de profil</h2>
+          </div>
+          <button class="replace-button"style="margin-right: 15px;"><img src="https://cdn-icons-png.freepik.com/512/1860/1860115.png" style="height: 20px; margin-right: 10px;"  alt="Remplacer">Remplacer</button>
+          <button class="delete-button"><img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" style="height: 20px; margin-right: 10px;"  alt="Supprimer">Supprimer</button>
+        </div>
+    </div>
+    <form #enForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+        <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" [(ngModel)]="enfant.first_name" [ngModelOptions]="{standalone:true}" placeholder="Nom">
+        </div>
+        <div>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" [(ngModel)]="enfant.last_name" [ngModelOptions]="{standalone:true}" placeholder="Prénom">
+        </div>
+        </div>
+        <div class="row">
+        
+        <div>
+            <label for="dateDeNaissance">Date de naissance</label>
+            <input type="date" [(ngModel)]="enfant.birthday" [ngModelOptions]="{standalone:true}" placeholder="Date de naissance">
+        </div>
+        </div>
+        <div class="row">
+        
+        <div>
+            <label for="genre">Genre</label>
+            <select id="genre" [(ngModel)]="enfant.gender" [ngModelOptions]="{standalone:true}" placeholder="Genre">
+            <option value="M">Homme</option>
+            <option value="F">Femme</option>
+            </select>
+        </div>
+        </div>
+        
+        
+    
+        <button type="submit" style="margin-right: 15px;">Enregistrer</button>
+        <button>Annuler</button>
+    </form>
+  </div>
